@@ -37,22 +37,26 @@ export default ((opts: Options) => {
 
     return (
       <div
-        class={classNames(displayClass, "giscus")}
-        data-repo={opts.options.repo}
-        data-repo-id={opts.options.repoId}
-        data-category={opts.options.category}
-        data-category-id={opts.options.categoryId}
-        data-mapping={opts.options.mapping ?? "url"}
-        data-strict={boolToStringBool(opts.options.strict ?? true)}
-        data-reactions-enabled={boolToStringBool(opts.options.reactionsEnabled ?? true)}
-        data-input-position={opts.options.inputPosition ?? "bottom"}
-        data-light-theme={opts.options.lightTheme ?? "light"}
-        data-dark-theme={opts.options.darkTheme ?? "dark"}
-        data-theme-url={
-          opts.options.themeUrl ?? `https://${cfg.baseUrl ?? "example.com"}/static/giscus`
-        }
-        data-lang={opts.options.lang ?? "en"}
-      ></div>
+  class={classNames(displayClass, "giscus")}
+  data-repo={opts.options.repo}
+  data-repo-id={opts.options.repoId}
+  data-category={opts.options.category}
+  data-category-id={opts.options.categoryId}
+  data-mapping={opts.options.mapping ?? "url"}
+  data-strict={boolToStringBool(opts.options.strict ?? true)}
+  data-reactions-enabled={boolToStringBool(opts.options.reactionsEnabled ?? true)}
+  data-input-position={opts.options.inputPosition ?? "bottom"}
+  
+  /* 確保這裡預設為你想要的主題名稱 */
+  data-light-theme={opts.options.lightTheme ?? "light_high_contrast"}
+  data-dark-theme={opts.options.darkTheme ?? "transparent_dark"}
+  
+  /* 核心修正：刪除原本的拼接邏輯 */
+  /* 只要這裡變成 undefined，Giscus 就會自動去官網抓主題，不會報 404 */
+  data-theme-url={opts.options.themeUrl} 
+  
+  data-lang={opts.options.lang ?? "en"}
+></div>
     )
   }
 
