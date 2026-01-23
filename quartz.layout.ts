@@ -13,6 +13,8 @@ export const sharedPageComponents: SharedLayout = {
         repoId: "R_kgDOQ9sT0Q",
         category: "Announcements",
         categoryId: "DIC_kwDOQ9sT0c4C1UhA",
+        lightTheme: "light_high_contrast", 
+        darkTheme: "transparent_dark",
         mapping: "pathname",
         strict: true,
         reactionsEnabled: true,
