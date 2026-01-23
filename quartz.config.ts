@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "zh-TW",
-    baseUrl: "https://oandy-rgb.github.io/MyPublicBlog/",
+    baseUrl: "oandy-rgb.github.io/MyPublicBlog",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
